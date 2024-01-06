@@ -1,4 +1,5 @@
 import { DatePicker } from "antd";
+import Navbar from "./components/Navbar";
 import axios from "axios";
 
 const dataFetch = {
@@ -16,8 +17,9 @@ try {
 } catch (error) {
   console.error(error);
 }
+
 const App = () => {
-  return <DatePicker />;
+  return <Navbar />;
 };
 
 export default App;
