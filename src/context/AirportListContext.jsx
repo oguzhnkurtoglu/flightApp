@@ -4,7 +4,7 @@ import axios from "axios";
 
 // Context bileşeni
 
-const AirportsContext = createContext(null);
+const AirportsContext = createContext();
 
 // Context sağlayıcısı
 
@@ -40,26 +40,3 @@ const AirportsProvider = ({ children }) => {
   );
 };
 
-// Bileşen
-
-const AirportsList = ({ airports }) => {
-  return (
-    <ul>
-      {airports.map((airport) => (
-        <li key={airport.id}>{airport.name}</li>
-      ))}
-    </ul>
-  );
-};
-
-// Uygulama
-
-const App = () => {
-  return (
-    <AirportsProvider>
-      <AirportsList />
-    </AirportsProvider>
-  );
-};
-
-export default App;
