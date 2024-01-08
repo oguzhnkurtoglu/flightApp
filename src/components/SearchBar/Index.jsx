@@ -8,9 +8,8 @@ import { useState } from "react";
     const [flight, setFlight]= useState({Start :"",End : ""})
     const handleChange = (event) => {
     setFlight({...flight,[event.target.name]: event.target.value})}
-    function handleDate(event) {
-      const selectedDate = event.target.value; // Seçilen tarihi alıyoruz
-      console.log("Seçilen tarih:", selectedDate); // Tarihi konsola yazdırıyoruz
+    function handleDate(date,dateString) {
+      console.log(dateString); // Tarihi konsola yazdırıyoruz
     }
   
 
@@ -21,20 +20,20 @@ import { useState } from "react";
 
     <label className="flex flex-col items-center space-x-2">
       <p className=" font-bold hover:text-xl text-white hover:text-slate-600">From</p>
-      <Input name="Start" className="w-full" onChange={handleChange} />
+      <Input name="Start" required className="w-full" onChange={handleChange} />
     </label>
     <label className="flex   flex-col items-center space-x-2">
       <p className=" font-bold  hover:text-xl text-white hover:text-slate-600">To</p>
-      <Input onChange={handleChange} name="End" className="w-full" />
+      <Input  required onChange={handleChange} name="End" className="w-full" />
     </label>
     <div className="flex w-full justify-evenly items-center">
     <label className="mr-2">
     <p className=" font-bold  hover:text-xl text-white hover:text-slate-600">From</p>
-      <DatePicker onChange={handleDate}  name="DepartureTime" className="w-40" />
+      <DatePicker required onChange={handleDate}  name="DepartureTime" className="w-40" />
     </label>
     <label>
     <p className=" font-bold  hover:text-xl text-white hover:text-slate-600">To</p>
-      <DatePicker onChange={handleDate} name="ArrivalTime" className="w-40" />
+      <DatePicker required onChange={handleDate} name="ArrivalTime" className="w-40" />
     </label>
     </div>
    
