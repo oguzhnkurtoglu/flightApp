@@ -1,12 +1,16 @@
+import Flightlist from "./components/Flightlist";
 import Navbar from "./components/Navbar";
-import SearchBar from "./components/SearchBar";
-import data from "./data/data.json"
+import Searchbar from "./components/Searchbar";
+
+
+
 
 const App = () => {
+  
+  
   return <div className="h-screen">
   <Navbar />
-  <SearchBar/>
-  {console.log(data)}
+  <Searchbar />
   </div>
 
 };
